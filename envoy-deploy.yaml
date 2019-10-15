@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: envoy
+  labels:
+    app: envoy
+spec:
+  selector:
+    matchLabels:
+      app: envoy
+  template:
+    metadata:
+      labels:
+        app: envoy
+    spec:
+      containers:
+      - name: envoy
+        image: patrocinio/envoy
+        imagePullPolicy: Always
+        env:
+        - name: SERVICE_NAME
+          value: myapp
+        ports:
+        - name: http
+          containerPort: 80
+        - name: envoy-admin
+          containerPort: 9901
