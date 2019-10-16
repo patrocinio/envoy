@@ -19,7 +19,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: SERVICE_NAME
-          value: dispatcher
+          value: headless
         - name: PORT_NUMBER
           value: "8080"
         ports:
