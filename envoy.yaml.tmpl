@@ -29,4 +29,4 @@ static_resources:
     type: STRICT_DNS
     dns_lookup_family: V4_ONLY
     lb_policy: LEAST_REQUEST
-    hosts: [{ socket_address: { address: ${SERVICE_NAME}, port_value: 8080 }}]
+    hosts: [{ socket_address: { address: ${SERVICE_NAME}, port_value: ${PORT_NUMBER} }}]
